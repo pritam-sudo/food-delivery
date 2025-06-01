@@ -34,4 +34,14 @@ yarn-error.log*
 
 # Cache directories
 .cache/
-.temp/ 
+.temp/
+
+# Large image files
+images/dishes/*.jpg
+images/dishes/*.png
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff 
