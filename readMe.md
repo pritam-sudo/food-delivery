@@ -69,4 +69,4 @@ The Figma file of the Responsive Food Delivery Website can be found on my [websi
 
 ## License
 
-This project is open source and available under the MIT License.
+This project is open source and available under pritam kumar joarder
