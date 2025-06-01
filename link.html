@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>link</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        :root {
+            --primary-color: #337ab7;
+            --hover-color: #23527c;
+            --bg-color: #f5f5f5;
+            --text-color: #333;
+            --section-bg: #fff;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* Database setup styles */
+        .db-setup {
+            margin-top: 30px;
+        }
+
+        .setup-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .setup-btn:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        .setup-btn:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .setup-btn i {
+            font-size: 20px;
+        }
+
+        .status {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .status.success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+
+        .status.error {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+
+        .status.show {
+            display: block;
+        }
+
+        .status ul {
+            margin: 10px 0 0 20px;
+            padding: 0;
+        }
+
+        .status li {
+            margin-bottom: 5px;
+        }
+
+        .section {
+            background: var(--section-bg);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .import-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .import-btn:hover {
+            background-color: #218838;
+        }
+
+        .import-btn:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+
+        .status-message {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .status-message.success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            display: block;
+        }
+
+        .status-message.error {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            display: block;
+        }
+
+        .link {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .link:hover {
+            background-color: var(--hover-color);
+        }
+
+        .structure-list {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .structure-list li {
+            margin-bottom: 10px;
+        }
+
+        .structure-list i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .credentials {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .tech-stack {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Food Delivery Website Documentation</h1>
+            <p>Complete project documentation and structure for frontend developers</p>
+        </header>
+
+        <div class="section">
+            <h2><i class='bx bx-link'></i> Quick Links</h2>
+            <div class="links">
+                <a href="http://localhost/food-delivery-website/index.html" class="link" target="_blank">
+                    <i class='bx bx-home'></i> Home
+                </a>
+                <a href="http://localhost/food-delivery-website/restaurant/login.php" class="link" target="_blank">
+                    <i class='bx bx-store'></i> Restaurant Login
+                </a>
+                <a href="http://localhost/food-delivery-website/delivery_person/login.php" class="link" target="_blank">
+                    <i class='bx bx-user'></i> Delivery Login
+                </a>
+                <a href="http://localhost/food-delivery-website/admin/login.php" class="link" target="_blank">
+                    <i class='bx bx-user'></i> Admin Login
+                </a>
+            </div>
+        </div>
+        <div class="section db-setup">
+            <h2><i class='bx bx-data'></i> Database Setup</h2>
+            <p>Click the button below to set up the database and import all required tables:</p>
+            
+            <button id="setupDb" class="setup-btn">
+                <i class='bx bx-server'></i>
+                Setup Database
+            </button>
+
+            <div id="dbStatus" class="status"></div>
+        </div>
+
+        <div class="section">
+            <h2><i class='bx bx-code-alt'></i> Technology Stack</h2>
+            <div class="tech-stack">
+                <div>
+                    <h3>Frontend</h3>
+                    <ul class="structure-list">
+                        <li><i class='bx bxl-html5'></i> HTML5</li>
+                        <li><i class='bx bxl-css3'></i> CSS3 with SCSS</li>
+                        <li><i class='bx bxl-javascript'></i> JavaScript</li>
+                        <li><i class='bx bx-carousel'></i> Swiper.js for carousels</li>
+                        <li><i class='bx bx-package'></i> Boxicons for icons</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Backend</h3>
+                    <ul class="structure-list">
+                        <li><i class='bx bxl-php'></i> PHP</li>
+                        <li><i class='bx bxs-data'></i> MySQL (XAMPP)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><i class='bx bx-folder'></i> Project Structure</h2>
+            <pre>
+food-delivery-website/
+    <span class="folder">admin/</span>
+        ├── add_dish.php
+        ├── config.php
+        ├── db.sql
+        ├── index.php
+        ├── login.php
+        ├── restaurant_admin.sql
+        ├── restaurant_orders.php
+        ├── restaurants.php
+        └── view_users.php
+    <span class="folder">all_orders.php</span>
+    <span class="folder">cancel_order.php</span>
+    <span class="folder">css/</span>
+    <span class="folder">data/</span>
+    <span class="folder">delivery_person/</span>
+        ├── login.php
+        ├── register.php
+        └── logout.php
+    <span class="folder">dishes.php</span>
+    <span class="folder">images/</span>
+    <span class="folder">index.html</span>
+    <span class="folder">js/</span>
+    <span class="folder">link.html</span>
+    <span class="folder">login.php</span>
+    <span class="folder">logout.php</span>
+    <span class="folder">order.php</span>
+    <span class="folder">order_confirmation.php</span>
+    <span class="folder">order_history.php</span>
+    <span class="folder">out_for_delivery.php</span>
+    <span class="folder">profile.php</span>
+    <span class="folder">readMe.md</span>
+    <span class="folder">register.php</span>
+    <span class="folder">restaurant/</span>
+    <span class="folder">scss/</span>
+    <span class="folder">setup_database.php</span>
+    <span class="folder">setup_delivery_db.php</span>
+            </pre>
+            
+        </div>
+
+        <div class="section">
+            <h2><i class='bx bx-layout'></i> UI Components</h2>
+            <ul class="structure-list">
+                <li><i class='bx bx-navigation'></i> Responsive navigation with mobile menu</li>
+                <li><i class='bx bx-shopping-bag'></i> Shopping cart with counter</li>
+                <li><i class='bx bx-user-circle'></i> User profile section</li>
+                <li><i class='bx bx-grid-alt'></i> Services showcase</li>
+                <li><i class='bx bx-food-menu'></i> Special recipes with filtering</li>
+                <li><i class='bx bx-comment-detail'></i> Testimonials section</li>
+                <li><i class='bx bx-mobile-alt'></i> Mobile app promotion section</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2><i class='bx bx-key'></i> Access Credentials</h2>
+            <div class="credentials">
+                <p><strong>Admin Login:</strong></p>
+                <p>Username: admin</p>
+                <p>Password: admin123</p>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <script>
+        document.getElementById('setupDb').addEventListener('click', async function() {
+            const button = this;
+            const status = document.getElementById('dbStatus');
+
+            // Disable button and show loading state
+            button.disabled = true;
+            button.innerHTML = '<i class="bx bx-loader-alt bx-spin"></i> Setting up...';
+            status.className = 'status';
+
+            try {
+                const response = await fetch('setup_database.php', {
+                    method: 'POST'
+                });
+                
+                const data = await response.json();
+
+                if (data.success) {
+                    status.className = 'status success show';
+                    let html = `<i class='bx bx-check-circle'></i> ${data.message}`;
+                    
+                    if (data.details && data.details.length > 0) {
+                        html += '<ul>';
+                        data.details.forEach(detail => {
+                            html += `<li>${detail}</li>`;
+                        });
+                        html += '</ul>';
+                    }
+                    
+                    status.innerHTML = html;
+                } else {
+                    throw new Error(data.error || 'Unknown error occurred');
+                }
+            } catch (error) {
+                status.className = 'status error show';
+                status.innerHTML = `<i class='bx bx-error-circle'></i> ${error.message}`;
+            } finally {
+                // Reset button state
+                button.disabled = false;
+                button.innerHTML = '<i class="bx bx-server"></i> Setup Database';
+            }
+        });
+    </script>
+</body>
+</html>
